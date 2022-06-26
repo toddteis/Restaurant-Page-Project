@@ -1,4 +1,7 @@
 import { header } from './header';
+import { home } from './home';
+import { menu } from './menu';
+import { contact } from './contact';
 import { footer } from './footer';
 import './style.css';
 
@@ -9,6 +12,11 @@ function component() {
 
   // Add Header
   element.appendChild(header.createHeader());
+
+  // Add Main Content
+  const mainContentEle = document.createElement('main');
+  mainContentEle.appendChild(home.createHome());
+  element.appendChild(mainContentEle);
 
   // Add Footer
   element.appendChild(footer.createFooter());
