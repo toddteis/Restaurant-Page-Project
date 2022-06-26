@@ -1,4 +1,5 @@
 import { header } from './header';
+import './style.css';
 
 function component() {
   const element = document.createElement('div');
@@ -6,9 +7,7 @@ function component() {
   element.id = 'content';
 
   // Added Header
-  const headerEle = document.createElement('header');
-  headerEle.textContent = header.createHeader();
-  element.appendChild(headerEle);
+  element.appendChild(header.createHeader());
 
   return element;
 }
