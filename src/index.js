@@ -1,4 +1,5 @@
 import { header } from './header';
+import { footer } from './footer';
 import './style.css';
 
 function component() {
@@ -6,8 +7,11 @@ function component() {
   element.classList.add('content')
   element.id = 'content';
 
-  // Added Header
+  // Add Header
   element.appendChild(header.createHeader());
+
+  // Add Footer
+  element.appendChild(footer.createFooter());
 
   return element;
 }
