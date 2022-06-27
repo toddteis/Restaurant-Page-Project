@@ -1,17 +1,35 @@
+import { home } from './home';
+import { menu } from "./menu";
+import { contact } from './contact';
+
 const header = (() => {
   function createHeader() {
     const element = document.createElement('header');
 
+    function removeAllChildNodes(parent) {
+      while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+      }
+    }
+
     function navHome() {
-      console.log('navHome clicked');
+      const main = document.getElementById('main');
+      removeAllChildNodes(main);
+      main.append(home.createHome());
     }
 
     function navMenu() {
-      console.log('navMenu clicked');
+      const contentArea = document.getElementById('text');
+      removeAllChildNodes(contentArea);
+      const menuContent = menu.createMenu();
+      contentArea.append(menuContent);
     }
 
     function navContact() {
-      console.log('navContact clicked');
+      const contentArea = document.getElementById('text');
+      removeAllChildNodes(contentArea);
+      const contactContent = contact.createContact();
+      contentArea.append(contactContent);
     }
     
     // create Logo

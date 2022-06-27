@@ -15,6 +15,7 @@ function component() {
 
   // Add Main Content
   const mainContentEle = document.createElement('main');
+  mainContentEle.id = 'main';
   mainContentEle.appendChild(home.createHome());
   element.appendChild(mainContentEle);
 
