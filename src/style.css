@@ -66,7 +66,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  height: 300px;
+  height: 600px;
   width: 600px;
 }
 
@@ -92,6 +92,9 @@ main {
   align-items: center;
   justify-content:space-between;
   color: #fff;
+  font-size: 1.4rem;
+  padding: 50px;
+  text-align: center;
 }
 
 .text > h1 > span {
@@ -99,11 +102,7 @@ main {
 }
 
 h1 {
-  margin-top: 90px;
-}
-
-.main-home {
-  margin-bottom: 90px;
+  font-size: 3rem;
 }
 
 /* FOOTER SECTION */
