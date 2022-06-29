@@ -2,12 +2,12 @@ const home = (() => {
 
   function createHome() {
     const element = document.createElement('div');
-    element.classList.add('text-shade-container');
+    element.classList.add('home-shade-container');
     const firstDivEle = document.createElement('div');
     const secDivEle = document.createElement('div');
-    firstDivEle.classList.add('shade');
-    secDivEle.classList.add('text');
-    secDivEle.id = 'text';
+    firstDivEle.classList.add('home-shade');
+    secDivEle.classList.add('home-text');
+    secDivEle.id = 'home-text';
 
     const h1Ele = document.createElement('h1');
     const paraEle1 = document.createElement('p');

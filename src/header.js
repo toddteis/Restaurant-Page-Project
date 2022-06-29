@@ -19,17 +19,15 @@ const header = (() => {
     }
 
     function navMenu() {
-      const contentArea = document.getElementById('text');
-      removeAllChildNodes(contentArea);
-      const menuContent = menu.createMenu();
-      contentArea.append(menuContent);
+      const main = document.getElementById('main');
+      removeAllChildNodes(main);
+      main.append(menu.createMenu());
     }
 
     function navContact() {
-      const contentArea = document.getElementById('text');
-      removeAllChildNodes(contentArea);
-      const contactContent = contact.createContact();
-      contentArea.append(contactContent);
+      const main = document.getElementById('main');
+      removeAllChildNodes(main);
+      main.append(contact.createContact());
     }
     
     // create Logo

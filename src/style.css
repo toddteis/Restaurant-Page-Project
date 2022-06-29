@@ -69,7 +69,7 @@ main {
   background: center / cover no-repeat url(./davide-cantelli-jpkfc5_d-DI-unsplash.jpg);
 }
 
-.text-shade-container {
+.home-shade-container {
   position: relative;
   margin-top: 130px;
   display: flex;
@@ -80,7 +80,7 @@ main {
   width: 600px;
 }
 
-.shade {
+.home-shade {
   position: absolute;
   top: 0;
   left: 0;
@@ -91,7 +91,7 @@ main {
   border-radius: 5px;
 }
 
-.text {
+.home-text {
   position: absolute;
   top: 0;
   left: 0;
@@ -107,12 +107,28 @@ main {
   text-align: center;
 }
 
-.text > h1 > span {
+h1 > span {
   text-decoration: underline overline;
 }
 
 h1 {
   font-size: 3rem;
+}
+
+/* MENU SECTION */
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(70, 70, 70, 0.9);
+  border: 1px solid rgba(70, 70, 70, 1);
+  border-radius: 4px;
 }
 
 /* FOOTER SECTION */
