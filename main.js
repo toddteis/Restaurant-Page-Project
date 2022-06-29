@@ -1,1 +1,0 @@
-(()=>{"use strict";const e=function(){console.log("hello from header.js")};document.body.appendChild(function(){const t=document.createElement("div");t.classList.add("content"),t.id="content";const n=document.createElement("header");return console.log(e()),n.textContent=e(),t.appendChild(n),t}())})();
