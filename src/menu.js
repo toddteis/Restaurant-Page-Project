@@ -73,10 +73,10 @@ const menu = (() => {
 
     const h1Ele = document.createElement('h1');
     h1Ele.innerHTML = "<span>M</span>" + "enu";
-    secDivEle.append(h1Ele);
+    secDivEle.appendChild(h1Ele);
     const cardsEle = document.createElement('div');
     cardsEle.classList.add('cards');
-    secDivEle.append(cardsEle);
+    secDivEle.appendChild(cardsEle);
 
     for (let i = 0; i < menuItems.length; i += 1) {
       // Card
@@ -85,36 +85,32 @@ const menu = (() => {
       // Title
       const h3Ele = document.createElement('h3');
       h3Ele.textContent = menuItems[i].title;
-      cardEle.append(h3Ele);
+      cardEle.appendChild(h3Ele);
       // Image
-      // const imgEle = document.createElement('img');
-      // imgEle.setAttribute('src', menuItems[i].filePath);
-      // imgEle.classList.add('card-img');
-      // cardEle.append(imgEle);
       const imgEle = new Image();
       imgEle.classList.add('card-img');
       imgEle.src = menuItems[i].filePath;
-      cardEle.append(imgEle);
+      cardEle.appendChild(imgEle);
       // Footer
       const cardFooterEle = document.createElement('div');
       cardFooterEle.classList.add('card-footer');
-      cardEle.append(cardFooterEle);
+      cardEle.appendChild(cardFooterEle);
       // Footer - description
       const descripDiv = document.createElement('div');
       descripDiv.classList.add('card-descrip');
-      cardFooterEle.append(descripDiv);
+      cardFooterEle.appendChild(descripDiv);
       const descrip = document.createElement('p');
       descrip.textContent = menuItems[i].description;
-      descripDiv.append(descrip);
+      descripDiv.appendChild(descrip);
       // Footer - price
       const priceDiv = document.createElement('div');
       priceDiv.classList.add('card-price');
       const price = document.createElement('p');
       price.textContent = menuItems[i].price;
-      priceDiv.append(price);
-      cardFooterEle.append(priceDiv);
+      priceDiv.appendChild(price);
+      cardFooterEle.appendChild(priceDiv);
 
-      cardsEle.append(cardEle);
+      cardsEle.appendChild(cardEle);
     }
 
     return element
