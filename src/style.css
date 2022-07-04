@@ -38,6 +38,11 @@ h2 {
   text-decoration: underline overline;
 }
 
+h4 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
 .nav-list {
   list-style: none;
   display: flex;
@@ -200,7 +205,6 @@ main {
   align-items: center;
   justify-content:flex-start;
   color: #fff;
-  font-size: 1.4rem;
   padding: 50px;
   text-align: center;
 }
@@ -229,6 +233,23 @@ main {
   height: 100%;
   padding: 10px;
   margin: 10px;
+}
+
+.socials {
+  height: 80px;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  width: 26px;
+  height: 26px;
+  margin: 8px;
 }
 
 /* FOOTER SECTION */
