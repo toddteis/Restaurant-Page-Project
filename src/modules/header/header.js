@@ -1,6 +1,6 @@
-import { home } from './home';
-import { menu } from "./menu";
-import { contact } from './contact';
+import { home } from '../home/home';
+import { menu } from "../menu/menu";
+import { contact } from '../contact/contact';
 
 const header = (() => {
   function createHeader() {

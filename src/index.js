@@ -1,9 +1,9 @@
-import { header } from './header';
-import { home } from './home';
-import { menu } from './menu';
-import { contact } from './contact';
-import { footer } from './footer';
-import './style.css';
+import { header } from './modules/header/header';
+import { home } from './modules/home/home';
+// import { menu } from './modules/menu/menu';
+// import { contact } from './modules/contact/contact';
+import { footer } from './modules/footer/footer';
+import '.assets/styles/style.css';
 
 function component() {
   const element = document.createElement('div');

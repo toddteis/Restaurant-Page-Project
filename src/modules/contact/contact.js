@@ -1,6 +1,6 @@
-import Facebook from './logo-facebook.svg';
-import Twitter from './logo-twitter.svg';
-import Instagram from './logo-instagram.svg';
+import Facebook from './assets/logo-facebook.svg';
+import Twitter from './assets/logo-twitter.svg';
+import Instagram from './assets/logo-instagram.svg';
 
 const contact = (() => {
 

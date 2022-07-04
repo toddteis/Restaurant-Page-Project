@@ -1,11 +1,11 @@
-import ImageGrilledChicken from './grilledchicken.jpg';
-import GyrosWrap from './gyroswrap.jpg';
-import FoodPlatter from './foodplatter.jpg';
-import MeatballPlatter from './meatballplatter.jpg';
-import Souvlaki from './souvlaki.jpg';
-import FigSalad from './figsalad.jpg';
-import EggPlant from './grilledeggplant.jpg';
-import GrilledFish from './grilledfish.jpg';
+import ImageGrilledChicken from './assets/grilledchicken.jpg';
+import GyrosWrap from './assets/gyroswrap.jpg';
+import FoodPlatter from './assets/foodplatter.jpg';
+import MeatballPlatter from './assets/meatballplatter.jpg';
+import Souvlaki from './assets/souvlaki.jpg';
+import FigSalad from './assets/figsalad.jpg';
+import EggPlant from './assets/grilledeggplant.jpg';
+import GrilledFish from './assets/grilledfish.jpg';
 
 const menu = (() => {
 
