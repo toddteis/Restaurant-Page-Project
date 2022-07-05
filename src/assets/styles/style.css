@@ -79,7 +79,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background: center / cover no-repeat url(./modules/home/assets/davide-cantelli-jpkfc5_d-DI-unsplash.jpg);
+  background: center / cover no-repeat url(../../modules/home/assets/davide-cantelli-jpkfc5_d-DI-unsplash.jpg);
 }
 
 .home-shade-container {

@@ -1,6 +1,7 @@
 import Facebook from './assets/logo-facebook.svg';
 import Twitter from './assets/logo-twitter.svg';
 import Instagram from './assets/logo-instagram.svg';
+import { form } from '../form/form';
 
 const contact = (() => {
 
@@ -86,6 +87,11 @@ const contact = (() => {
     messageHeadEle.textContent = 'Message';
     messageEle.append(messageHeadEle);
     textEle.append(messageEle);
+    const formDisplay = document.createElement('div')
+    formDisplay.classList.add('form-display');
+    formDisplay.id = 'form-display';
+    formDisplay.append(form.createForm());
+    messageEle.append(formDisplay);
     detailsEle.append(textEle);
     // Map
     const mapEle = document.createElement('div');
