@@ -87,12 +87,13 @@ const contact = (() => {
     messageHeadEle.textContent = 'Message';
     messageEle.append(messageHeadEle);
     textEle.append(messageEle);
-    const formDisplay = document.createElement('div')
+    const formDisplay = document.createElement('div');
     formDisplay.classList.add('form-display');
     formDisplay.id = 'form-display';
-    formDisplay.append(form.createForm());
     messageEle.append(formDisplay);
     detailsEle.append(textEle);
+    formDisplay.append(form.createForm());
+
     // Map
     const mapEle = document.createElement('div');
     mapEle.classList.add('contact-map');
