@@ -14,72 +14,107 @@ const contact = (() => {
     secDivEle.classList.add('contact-text-container');
     element.appendChild(firstDivEle);
     element.appendChild(secDivEle);
-    // heading
+    // Heading
     const h1Ele = document.createElement('h1');
     h1Ele.innerHTML = "<span>C</span>" + "ontact";
     secDivEle.append(h1Ele);
-    // contact details
+    // Contact Details
     const detailsEle = document.createElement('div');
     detailsEle.classList.add('contact-details');
     secDivEle.append(detailsEle);
     // Address, socials & message
     const textEle = document.createElement('div');
     textEle.classList.add('contact-text');
-    // Open hours
-    const openHoursEle = document.createElement('div');
-    const openHoursHeadEle = document.createElement('h4');
-    openHoursHeadEle.textContent = 'Open Hours';
-    openHoursEle.append(openHoursHeadEle);
-    const openHoursParaEle = document.createElement('p');
-    openHoursParaEle.textContent = '11:00am till late.';
-    openHoursEle.append(openHoursParaEle);
-    textEle.append(openHoursEle);
-    // Phone
-    const phoneEle = document.createElement('div');
-    phoneEle.classList.add('phone-address');
-    const phoneHeadEle = document.createElement('h4');
-    phoneHeadEle.textContent = 'Phone';
-    phoneEle.append(phoneHeadEle);
-    const phoneParaEle = document.createElement('p');
-    phoneParaEle.textContent = '05 5555 5555';
-    phoneEle.append(phoneParaEle);
-    textEle.append(phoneEle);
-
-    // address
-    const addressEle = document.createElement('div');
-    addressEle.classList.add('contact-address');
-    const addressHeadEle = document.createElement('h4');
-    addressHeadEle.textContent = "Address";
-    addressEle.append(addressHeadEle);
-    const addressParaEle = document.createElement('p');
-    addressParaEle.textContent = '5555 Ocean Street Maroochydore Qld';
-    addressEle.append(addressParaEle);
-    textEle.append(addressEle);
-    // Socials
-    const socialsEle = document.createElement('div');
-    socialsEle.classList.add('contact-socials');
-    const socialsHeadEle = document.createElement('h4');
-    socialsHeadEle.textContent = 'Socials';
-    socialsEle.classList.add('socials');
-    socialsEle.append(socialsHeadEle);
-    const socialsParaEle = document.createElement('p');
-    // Facebook
+    
+    // Details
+    const details = document.createElement('div');
+    details.classList.add('details');
+    textEle.append(details);
+    const detailsFirstParaEle = document.createElement('p');
+    detailsFirstParaEle.textContent = '11am to 10pm | Mon - Sun';
+    details.append(detailsFirstParaEle);
+    const detailsSecondParaEle = document.createElement('p');
+    detailsSecondParaEle.textContent = 'Ph: 05 5555 5555';
+    details.append(detailsSecondParaEle);
+    const detailsThirdParaEle = document.createElement('p');
+    detailsThirdParaEle.textContent = '5555 Ocean Street Maroochydore Qld';
+    details.append(detailsThirdParaEle);
+    const detailsFourthParaEle = document.createElement('p');
+    details.append(detailsFourthParaEle);
+     // Facebook
     const faceBookEle = document.createElement('img');
     faceBookEle.setAttribute('src', Facebook);
     faceBookEle.classList.add('social-icon');
-    socialsParaEle.append(faceBookEle);
+    detailsFourthParaEle.append(faceBookEle);
     // Twitter
     const twitterEle = document.createElement('img');
     twitterEle.setAttribute('src', Twitter);
     twitterEle.classList.add('social-icon')
-    socialsParaEle.append(twitterEle);
+    detailsFourthParaEle.append(twitterEle);
     // Instagram
     const instagramEle = document.createElement('img');
     instagramEle.setAttribute('src', Instagram);
     instagramEle.classList.add('social-icon');
-    socialsParaEle.append(instagramEle);
-    socialsEle.append(socialsParaEle);
-    textEle.append(socialsEle);
+    detailsFourthParaEle.append(instagramEle);
+
+    
+    // // Open hours
+    // const openHoursEle = document.createElement('div');
+    // const openHoursHeadEle = document.createElement('h4');
+    // openHoursHeadEle.textContent = 'Open Hours: ';
+    // openHoursEle.append(openHoursHeadEle);
+    // const openHoursParaEle = document.createElement('p');
+    // openHoursParaEle.textContent = '11:00am till late.';
+    // openHoursEle.append(openHoursParaEle);
+    // textEle.append(openHoursEle);
+    // // Phone
+    // const phoneEle = document.createElement('div');
+    // phoneEle.classList.add('phone-address');
+    // const phoneHeadEle = document.createElement('h4');
+    // phoneHeadEle.textContent = 'Phone: ';
+    // phoneEle.append(phoneHeadEle);
+    // const phoneParaEle = document.createElement('p');
+    // phoneParaEle.textContent = '05 5555 5555';
+    // phoneEle.append(phoneParaEle);
+    // textEle.append(phoneEle);
+
+    // // address
+    // const addressEle = document.createElement('div');
+    // addressEle.classList.add('contact-address');
+    // const addressHeadEle = document.createElement('h4');
+    // addressHeadEle.textContent = "Address";
+    // addressEle.append(addressHeadEle);
+    // const addressParaEle = document.createElement('p');
+    // addressParaEle.textContent = '5555 Ocean Street Maroochydore Qld';
+    // addressEle.append(addressParaEle);
+    // textEle.append(addressEle);
+    // // Socials
+    // const socialsEle = document.createElement('div');
+    // socialsEle.classList.add('contact-socials');
+    // const socialsHeadEle = document.createElement('h4');
+    // socialsHeadEle.textContent = 'Socials';
+    // socialsEle.classList.add('socials');
+    // socialsEle.append(socialsHeadEle);
+    // const socialsParaEle = document.createElement('p');
+    // // Facebook
+    // const faceBookEle = document.createElement('img');
+    // faceBookEle.setAttribute('src', Facebook);
+    // faceBookEle.classList.add('social-icon');
+    // socialsParaEle.append(faceBookEle);
+    // // Twitter
+    // const twitterEle = document.createElement('img');
+    // twitterEle.setAttribute('src', Twitter);
+    // twitterEle.classList.add('social-icon')
+    // socialsParaEle.append(twitterEle);
+    // // Instagram
+    // const instagramEle = document.createElement('img');
+    // instagramEle.setAttribute('src', Instagram);
+    // instagramEle.classList.add('social-icon');
+    // socialsParaEle.append(instagramEle);
+    // socialsEle.append(socialsParaEle);
+    // textEle.append(socialsEle);
+    
+    
     // Message
     const messageEle = document.createElement('div');
     messageEle.classList.add('contact-message');
