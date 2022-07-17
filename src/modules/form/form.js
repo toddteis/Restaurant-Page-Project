@@ -8,6 +8,7 @@ const form = (() => {
     element.append(labelName);
     const inputName = document.createElement('input');
     inputName.setAttribute('name', 'name');
+    inputName.setAttribute('required', 'required');
     element.append(inputName);
     // Email Input
     const labelEmail = document.createElement('label');
@@ -16,6 +17,8 @@ const form = (() => {
     element.append(labelEmail);
     const inputEmail = document.createElement('input');
     inputEmail.setAttribute('name', 'email');
+    inputEmail.setAttribute('required', 'required');
+    inputEmail.setAttribute('type', 'email');
     element.append(inputEmail);
     // Textbox Input
     const labelMsg = document.createElement('label');
@@ -24,6 +27,7 @@ const form = (() => {
     element.append(labelMsg);
     const inputMsg = document.createElement('textarea');
     inputMsg.setAttribute('name', 'message');
+    inputMsg.setAttribute('required', 'required');
     element.append(inputMsg);
 
     // Submit Button
