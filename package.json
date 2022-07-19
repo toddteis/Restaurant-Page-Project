@@ -25,6 +25,7 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.14.3",
     "html-entities": "^2.3.3"
   }
 }

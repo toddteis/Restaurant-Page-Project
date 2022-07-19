@@ -2,6 +2,7 @@ import Facebook from './assets/logo-facebook.svg';
 import Twitter from './assets/logo-twitter.svg';
 import Instagram from './assets/logo-instagram.svg';
 import { form } from '../form/form';
+import { Loader } from "@googlemaps/js-api-loader";
 
 const contact = (() => {
 
@@ -55,65 +56,7 @@ const contact = (() => {
     const instagramEle = document.createElement('img');
     instagramEle.setAttribute('src', Instagram);
     instagramEle.classList.add('social-icon');
-    detailsFourthParaEle.append(instagramEle);
-
-    
-    // // Open hours
-    // const openHoursEle = document.createElement('div');
-    // const openHoursHeadEle = document.createElement('h4');
-    // openHoursHeadEle.textContent = 'Open Hours: ';
-    // openHoursEle.append(openHoursHeadEle);
-    // const openHoursParaEle = document.createElement('p');
-    // openHoursParaEle.textContent = '11:00am till late.';
-    // openHoursEle.append(openHoursParaEle);
-    // textEle.append(openHoursEle);
-    // // Phone
-    // const phoneEle = document.createElement('div');
-    // phoneEle.classList.add('phone-address');
-    // const phoneHeadEle = document.createElement('h4');
-    // phoneHeadEle.textContent = 'Phone: ';
-    // phoneEle.append(phoneHeadEle);
-    // const phoneParaEle = document.createElement('p');
-    // phoneParaEle.textContent = '05 5555 5555';
-    // phoneEle.append(phoneParaEle);
-    // textEle.append(phoneEle);
-
-    // // address
-    // const addressEle = document.createElement('div');
-    // addressEle.classList.add('contact-address');
-    // const addressHeadEle = document.createElement('h4');
-    // addressHeadEle.textContent = "Address";
-    // addressEle.append(addressHeadEle);
-    // const addressParaEle = document.createElement('p');
-    // addressParaEle.textContent = '5555 Ocean Street Maroochydore Qld';
-    // addressEle.append(addressParaEle);
-    // textEle.append(addressEle);
-    // // Socials
-    // const socialsEle = document.createElement('div');
-    // socialsEle.classList.add('contact-socials');
-    // const socialsHeadEle = document.createElement('h4');
-    // socialsHeadEle.textContent = 'Socials';
-    // socialsEle.classList.add('socials');
-    // socialsEle.append(socialsHeadEle);
-    // const socialsParaEle = document.createElement('p');
-    // // Facebook
-    // const faceBookEle = document.createElement('img');
-    // faceBookEle.setAttribute('src', Facebook);
-    // faceBookEle.classList.add('social-icon');
-    // socialsParaEle.append(faceBookEle);
-    // // Twitter
-    // const twitterEle = document.createElement('img');
-    // twitterEle.setAttribute('src', Twitter);
-    // twitterEle.classList.add('social-icon')
-    // socialsParaEle.append(twitterEle);
-    // // Instagram
-    // const instagramEle = document.createElement('img');
-    // instagramEle.setAttribute('src', Instagram);
-    // instagramEle.classList.add('social-icon');
-    // socialsParaEle.append(instagramEle);
-    // socialsEle.append(socialsParaEle);
-    // textEle.append(socialsEle);
-    
+    detailsFourthParaEle.append(instagramEle);    
     
     // Message
     const messageEle = document.createElement('div');
@@ -136,10 +79,31 @@ const contact = (() => {
     mapHeadEle.textContent = 'Map';
     mapEle.append(mapHeadEle);
     const mapDisplayEle = document.createElement('div');
-    mapDisplayEle.id = 'map-display';
+    mapDisplayEle.id = 'map';
     mapEle.append(mapDisplayEle);
-    detailsEle.append(mapEle);
+    // google map code start
+    const loader = new Loader({
+      apiKey: "AIzaSyDLtSjpCRw3FFxQTBR-NH7WycOwuzQWqW4",
+      version: "weekly",
+    });
+    
+    loader.load().then(() => {
+      const oceanStreet = { lat: -26.652101311380598, lng: 153.0907618981594};
+      const map = new google.maps.Map(document.getElementById("map"), {
+        center: oceanStreet,
+        zoom: 17,
+      });
+      const marker = new google.maps.Marker({
+        position: oceanStreet,
+        map: map,
+        title: 'Zeus\'s Kitchen',
+        label: 'Zeus\'s Kitchen'
+      });
+    });
+    // google map code end
 
+    mapDisplayEle.append(loader.load());
+    detailsEle.append(mapEle);
 
     return element
   }

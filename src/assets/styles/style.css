@@ -192,6 +192,11 @@ main {
   content: "$";
 }
 
+#map {
+  height: 375px;
+  width:  445px;
+}
+
 /* CONTACT SECTION */
 
 .contact-text-container {
