@@ -83,7 +83,7 @@ const contact = (() => {
     mapEle.append(mapDisplayEle);
     // google map code start
     const loader = new Loader({
-      apiKey: "AIzaSyDLtSjpCRw3FFxQTBR-NH7WycOwuzQWqW4",
+      apiKey: process.env.API_KEY,
       version: "weekly",
     });
     
