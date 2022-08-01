@@ -1,8 +1,13 @@
 import {decode} from 'html-entities';
 
 const form = (() => {
-  function openModal(e) {
+  
+  function validForm(e) {
     e.preventDefault();
+    // openModal();
+  }
+  
+  function openModal() {
     const modal = document.getElementById('modal');
     modal.style.display = 'block';
   }
@@ -18,6 +23,13 @@ const form = (() => {
     inputName.setAttribute('name', 'name');
     inputName.setAttribute('required', 'required');
     element.append(inputName);
+    const spanName = document.createElement('span');
+    spanName.id = 'nameError';
+    element.append(spanName);
+    // Event listener for input
+    inputName.addEventListener('input', function (event) {
+      console.log('Name')
+    })
     // Email Input
     const labelEmail = document.createElement('label');
     labelEmail.textContent = 'Email*:';
@@ -28,6 +40,14 @@ const form = (() => {
     inputEmail.setAttribute('required', 'required');
     inputEmail.setAttribute('type', 'email');
     element.append(inputEmail);
+    const spanEmail = document.createElement('span');
+    spanEmail.id = 'emailError';
+    element.append(spanEmail);
+    // Event listener for input
+    inputEmail.addEventListener('input', function (event) {
+      console.log('input')
+    })
+
     // Textbox Input
     const labelMsg = document.createElement('label');
     labelMsg.setAttribute('for', 'message')
@@ -37,6 +57,13 @@ const form = (() => {
     inputMsg.setAttribute('name', 'message');
     inputMsg.setAttribute('required', 'required');
     element.append(inputMsg);
+    const spanMsg = document.createElement('span');
+    spanMsg.id = 'msgError';
+    element.append(spanMsg);
+    // Event listener for input
+    inputMsg.addEventListener('input', function (event) {
+      console.log('msg')
+    })
 
     // Confirmation Modal
     const modal = document.createElement('div');
@@ -71,7 +98,7 @@ const form = (() => {
     const btn = document.createElement('button');
     btn.setAttribute('type', 'submit');
     btn.textContent = 'Submit';
-    btn.addEventListener('click', openModal);
+    btn.addEventListener('click', validForm);
     element.append(btn);
 
     
