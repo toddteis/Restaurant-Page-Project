@@ -14,6 +14,26 @@ const form = (() => {
   
   function createForm() {
     const element = document.createElement('form');
+
+    function showEmailError() {
+      if(inputEmail.validity.valueMissing) {
+        // If the field is empty,
+        // display the following error message.
+        spanEmail.textContent = 'You need to enter an e-mail address.';
+      } else if(inputEmail.validity.typeMismatch) {
+        // If the field doesn't contain an email address,
+        // display the following error message.
+        spanEmail.textContent = 'Entered value needs to be an e-mail address.';
+      } else if(inputEmail.validity.tooShort) {
+        // If the data is too short,
+        // display the following error message.
+        spanEmail.textContent = `Email should be at least ${ email.minLength } characters; you entered ${ email.value.length }.`;
+      }
+    
+      // Set the styling appropriately
+      spanEmail.className = 'error active';
+    }
+
     // Name Input
     const labelName = document.createElement('label');
     labelName.textContent = 'Name*:'
@@ -45,7 +65,14 @@ const form = (() => {
     element.append(spanEmail);
     // Event listener for input
     inputEmail.addEventListener('input', function (event) {
-      console.log('input')
+      if (inputEmail.validity.valid) {
+        // In case there is an error message visible, if the field
+        // is valid, we remove the error message.
+        spanEmail.textContent = ''; // Reset the content of the message
+        spanEmail.className = 'error'; // Reset the visual state of the message
+      } else {
+        showEmailError();
+      }
     })
 
     // Textbox Input
