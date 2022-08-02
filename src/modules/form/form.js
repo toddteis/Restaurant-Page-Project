@@ -1,19 +1,43 @@
 import {decode} from 'html-entities';
 
 const form = (() => {
-  
-  function validForm(e) {
-    e.preventDefault();
-    // openModal();
-  }
-  
-  function openModal() {
-    const modal = document.getElementById('modal');
-    modal.style.display = 'block';
-  }
+
   
   function createForm() {
     const element = document.createElement('form');
+    element.setAttribute('novalidate', 'novalidate');
+
+    function validForm(e) {
+      e.preventDefault();
+      if ( inputName.validity.valid
+        && inputEmail.validity.valid
+        && inputMsg.validity.valid) {
+          inputName.value = '';
+          inputEmail.value = '';
+          inputMsg.value = '';
+          openModal();
+        }
+    }
+    
+    function openModal() {
+      const modal = document.getElementById('modal');
+      modal.style.display = 'block';
+    }
+
+    function showNameError()  {
+      if(inputName.validity.valueMissing) {
+        // If the field is empty,
+        // display the following error message.
+        spanName.textContent = 'You need to enter your name.';
+      } else if(inputName.validity.tooShort) {
+        // If the data is too short,
+        // display the following error message.
+        spanName.textContent = `Your Name should be at least ${ inputName.minLength } characters; you entered ${ inputName.value.length }.`
+      }
+    
+      // Set the styling appropriately
+      spanName.className = 'error active';
+    }
 
     function showEmailError() {
       if(inputEmail.validity.valueMissing) {
@@ -27,12 +51,28 @@ const form = (() => {
       } else if(inputEmail.validity.tooShort) {
         // If the data is too short,
         // display the following error message.
-        spanEmail.textContent = `Email should be at least ${ email.minLength } characters; you entered ${ email.value.length }.`;
+        spanEmail.textContent = `Email should be at least ${ inputEmail.minLength } characters; you entered ${ inputEmail.value.length }.`;
       }
     
       // Set the styling appropriately
       spanEmail.className = 'error active';
     }
+
+    function showMsgError() {
+      if(inputMsg.validity.valueMissing) {
+        // If the field is empty,
+        // display the following error message.
+        spanMsg.textContent = 'You need to enter an e-mail address.';
+      } else if(inputMsg.validity.tooShort) {
+        // If the data is too short,
+        // display the following error message.
+        spanMsg.textContent = `Email should be at least ${ inputMsg.minLength } characters; you entered ${ inputMsg.value.length }.`;
+      }
+    
+      // Set the styling appropriately
+      spanMsg.className = 'error active';
+    }
+    
 
     // Name Input
     const labelName = document.createElement('label');
@@ -41,6 +81,7 @@ const form = (() => {
     element.append(labelName);
     const inputName = document.createElement('input');
     inputName.setAttribute('name', 'name');
+    inputName.setAttribute('minlength', '3');
     inputName.setAttribute('required', 'required');
     element.append(inputName);
     const spanName = document.createElement('span');
@@ -48,8 +89,16 @@ const form = (() => {
     element.append(spanName);
     // Event listener for input
     inputName.addEventListener('input', function (event) {
-      console.log('Name')
+      if (inputName.validity.valid) {
+        // In case there is an error message visible, if the field
+        // is valid, we remove the error message.
+        spanName.textContent = ''; // Reset the content of the message
+        spanName.className = 'error'; // Reset the visual state of the message
+      } else {
+        showNameError();
+      }
     })
+
     // Email Input
     const labelEmail = document.createElement('label');
     labelEmail.textContent = 'Email*:';
@@ -57,6 +106,7 @@ const form = (() => {
     element.append(labelEmail);
     const inputEmail = document.createElement('input');
     inputEmail.setAttribute('name', 'email');
+    inputEmail.setAttribute('minlength', '6');
     inputEmail.setAttribute('required', 'required');
     inputEmail.setAttribute('type', 'email');
     element.append(inputEmail);
@@ -82,6 +132,7 @@ const form = (() => {
     element.append(labelMsg);
     const inputMsg = document.createElement('textarea');
     inputMsg.setAttribute('name', 'message');
+    inputMsg.setAttribute('minlength', '20');
     inputMsg.setAttribute('required', 'required');
     element.append(inputMsg);
     const spanMsg = document.createElement('span');
@@ -89,7 +140,14 @@ const form = (() => {
     element.append(spanMsg);
     // Event listener for input
     inputMsg.addEventListener('input', function (event) {
-      console.log('msg')
+      if (inputMsg.validity.valid) {
+        // In case there is an error message visible, if the field
+        // is valid, we remove the error message.
+        spanMsg.textContent = ''; // Reset the content of the message
+        spanMsg.className = 'error'; // Reset the visual state of the message
+      } else {
+        showMsgError();
+      }
     })
 
     // Confirmation Modal
